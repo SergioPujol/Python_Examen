@@ -26,9 +26,7 @@ def mas_antiguos(libros, anyo):
     if int(anyo) < 1900 or int(anyo) > 2021:
         raise ValueError("El anyo no es valido")
 
-    lista = []
-    for libro in libros:
-        if not int(libro.get_anyo()) > int(anyo):
-            lista.append(libro.get_titulo())
+    lista = [libro.get_titulo() for libro in libros if not int(libro.get_anyo()) > int(anyo)]
+    
     return lista
 
