@@ -74,8 +74,10 @@ print("total: "+str(res))
 
 #ERROR 3: quiero modificar la butaca (2,4) de la lista anterior para que sea la (3,4) y no me deja.
 print("\n------------- Error 3 -----------------")
-seats[0][1]=3
+seats[0]= (3,4)
 total = 0
-cinema.count_free_seats(seats,total)
-print("total: "+str(total))
+res = cinema.count_free_seats(seats,total)
+print("total: "+str(res))
+# El error aparece porque el valor que le introduces a la tupla no se puede modificar una vez instanciado
+# Por ello, la solucion es asignar una nueva tubla con los valores que se deseen establecer, en este caso (3,4)
         
