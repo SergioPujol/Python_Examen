@@ -11,15 +11,24 @@ indicando que el fichero est´a vac´ıo
 def get_list(fichero):
     dic = {}
     f = open(fichero, mode="rt", encoding="utf-8")
+
+    #texto = f.read()
+    """if len(f) < 1:
+        raise ValueError("El fichero está vacío")
+    """
     for linea in f:
         listaPalabras = linea.split()
-        print(listaPalabras)
         for palabra in listaPalabras:
-            if dic[len(palabra)] == list
-            print("Palabra " + palabra + " con longitud "+ str(len(palabra)))
-            #dic[len(palabra)].append(palabra)
+            try:
+                if(dic[len(palabra)].count(palabra) == 0):
+                    dic[len(palabra)].append(palabra)
+            except:
+                dic[len(palabra)] = []
+                dic[len(palabra)].append(palabra)
+
 
     print(dic)
     
 
 get_list("palabras.txt")
+#get_list("texto_vacio.txt")
