@@ -21,16 +21,10 @@ def get_list(fichero):
 
     print(dic)
 
-listaLibros = []
-libro1 = Libro(autor = Autor(id_autor = "1", nombre= "Pedro", apellido= "Pujol"), titulo= "El tesoro 1" , anyo= "2006")
-libro2 = Libro(autor = Autor(id_autor = "2", nombre= "Juan", apellido= "Pujol"), titulo= "El tesoro 2" , anyo= "2000")
-libro3 = Libro(autor = Autor(id_autor = "3", nombre= "Sergio", apellido= "Pujol"), titulo= "El tesoro 3" , anyo= "2003")
-listaLibros.append(libro1)
-listaLibros.append(libro2)
-listaLibros.append(libro3)
 def mas_antiguos(libros, anyo):
 
-    if int(anyo) < 1900
+    if int(anyo) < 1900 or int(anyo) > 2021:
+        raise ValueError("El anyo no es valido")
 
     lista = []
     for libro in libros:
@@ -38,6 +32,3 @@ def mas_antiguos(libros, anyo):
             lista.append(libro.get_titulo())
     return lista
 
-get_list("palabras.txt")
-print(mas_antiguos(listaLibros, "2004"))
-#get_list("texto_vacio.txt")
