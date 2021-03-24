@@ -1,21 +1,13 @@
-# get_list 
-"""
-Reciba el nombre de un fichero de palabras y devuelva
-un diccionario donde la clave de cada elemento sea un n´umero 1, 2, 3 y el valor sea una lista
-con las palabras del fichero que tienen esa longitud. Si una palabra aparece repetida, solo se
-tendr´a en cuenta una. En cada l´ınea del fichero puede haber m´as de una palabra. Si se le
-pasa un fichero que no tiene ninguna palabra, la funci´on emitir´a una excepci´on ValueError
-indicando que el fichero est´a vac´ıo
-"""
+from libro import Libro
+from autor import Autor
 
 def get_list(fichero):
     dic = {}
     f = open(fichero, mode="rt", encoding="utf-8")
 
-    #texto = f.read()
-    """if len(f) < 1:
-        raise ValueError("El fichero está vacío")
-    """
+    if len(open(fichero, mode="rt", encoding="utf-8").read()) < 1:
+        raise ValueError("El fichero esta vacio")
+    
     for linea in f:
         listaPalabras = linea.split()
         for palabra in listaPalabras:
@@ -28,7 +20,24 @@ def get_list(fichero):
 
 
     print(dic)
-    
+
+listaLibros = []
+libro1 = Libro(autor = Autor(id_autor = "1", nombre= "Pedro", apellido= "Pujol"), titulo= "El tesoro 1" , anyo= "2006")
+libro2 = Libro(autor = Autor(id_autor = "2", nombre= "Juan", apellido= "Pujol"), titulo= "El tesoro 2" , anyo= "2000")
+libro3 = Libro(autor = Autor(id_autor = "3", nombre= "Sergio", apellido= "Pujol"), titulo= "El tesoro 3" , anyo= "2003")
+listaLibros.append(libro1)
+listaLibros.append(libro2)
+listaLibros.append(libro3)
+def mas_antiguos(libros, anyo):
+
+    if int(anyo) < 1900
+
+    lista = []
+    for libro in libros:
+        if not int(libro.get_anyo()) > int(anyo):
+            lista.append(libro.get_titulo())
+    return lista
 
 get_list("palabras.txt")
+print(mas_antiguos(listaLibros, "2004"))
 #get_list("texto_vacio.txt")

@@ -1,6 +1,8 @@
 class Autor:
 
     def __init__(self, id_autor, nombre, apellido):
-        self.id_autor = id_autor
-        self.nombre = nombre
-        self.apellido = apellido
+        self.__id_autor = id_autor
+        self.__nombre = nombre
+        self.__apellido = apellido
+
+    
